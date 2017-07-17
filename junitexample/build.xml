@@ -1,0 +1,32 @@
+<project name="junitexample">
+  <property name="main.build.dir" value="build/main"/>
+  <property name="main.src.dir" value="src"/>
+  <property name="test.build.dir" value="output"/>
+  <property name="test.src.dir" value="src/test/java"/>
+
+  <path id="classpath.test">
+    <pathelement location="lib/junit-4.12.jar"/>
+    <pathelement location="${main.build.dir}"/>
+  </path>
+
+  
+
+  <target name="CaculatorTest">
+    <mkdir dir="${src.build.dir}"/>
+  	<junit fork="yes" printsummary="withOutAndErr">
+  	            <formatter type="xml"/>
+  	            <test name="src.TestLogic" todir="${test.build.dir}"/>
+  	            <classpath refid="junitexample.classpath"/>
+  	</junit>
+   
+  </target>
+
+  <target name="junitreport" depends="CaculatorTest">
+  	<junitreport todir="${test.build.dir}">
+  	            <fileset dir="${test.build.dir}">
+  	                <include name="TEST-*.xml"/>
+  	            </fileset>
+  	            <report format="frames" todir="${test.build.dir}"/>
+  	        </junitreport>
+  </target>
+</project>
