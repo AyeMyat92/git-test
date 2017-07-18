@@ -13,7 +13,7 @@
 	
   
 	
-   <target name = "test" depends = "CalculatorTest">
+   <target name = "test">
       <mkdir dir="${testdir}"/>
       <junit>
          <classpath refid = "classpath.test" />
