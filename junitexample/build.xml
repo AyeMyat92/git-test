@@ -20,7 +20,7 @@
    </target>
 	
    <target name = "CalculatorTest" depends = "clean">
-      <mkdir dir="${junit.output.dir}"/>
+      <mkdir dir="${testdir}"/>
       <javac srcdir = "${srcdir}" destdir = "${testdir}" 
          verbose = "${full-compile}">
          <classpath refid = "classpath.test"/>
