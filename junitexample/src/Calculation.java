@@ -1,5 +1,3 @@
-package com.junit.teastcase;
-
 public class Calculation {
 
 	 public static int findMax(int arr[]){  
