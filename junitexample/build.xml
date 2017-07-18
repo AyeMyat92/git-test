@@ -13,16 +13,16 @@
 	
   
 	
-   <target name = "test">
+   <target name = "TestLogic">
       <mkdir dir="${testdir}"/>
       <junit>
          <classpath refid = "classpath.test" />
          <formatter type = "xml" />
-         <test name = "CalculatorTest" todir="${testdir}"/>
+         <test name = "TestLogic" todir="${testdir}"/>
       </junit>
    </target>
 	
-   <target name="junitreport" depends="test">
+   <target name="junitreport" depends="TestLogic">
   	<junitreport todir="${testdir}">
   	            <fileset dir="${testdir}">
   	                <include name="TEST-*.xml"/>
