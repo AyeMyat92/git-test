@@ -8,9 +8,7 @@
 	
    <path id = "classpath.test">
       <pathelement location = "${JUNIT_HOME}/lib/junit-4.10.jar" />
-      <pathelement location = "${testdir}" />   
-      <pathelement location = "${srcdir}" />
-      <path refid = "classpath.base" />
+   <path refid = "classpath.base" />
    </path>
 	
    <target name = "clean" >
@@ -30,8 +28,8 @@
    <target name = "test" depends = "CalculatorTest">
       <junit>
          <classpath refid = "classpath.test" />
-         <formatter type = "brief" usefile = "false" />
-         <test name = "CalculatorTest" />
+         <formatter type = "xml" />
+         <test name = "CalculatorTest" todir="${testdir}"/>
       </junit>
    </target>
 	
