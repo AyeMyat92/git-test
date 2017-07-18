@@ -22,4 +22,13 @@
       </junit>
    </target>
 	
+   <target name="junitreport" depends="test">
+  	<junitreport todir="${testdir}">
+  	            <fileset dir="${testdir}">
+  	                <include name="TEST-*.xml"/>
+  	            </fileset>
+  	            <report format="frames" todir="${testdir}"/>
+  	        </junitreport>
+  </target>
+	
 </project>
