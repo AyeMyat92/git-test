@@ -20,6 +20,8 @@
    </target>
 	
    <target name = "compile" depends = "clean">
+	         	   <mkdir dir="${testdir}"/>
+
       <javac srcdir = "${srcdir}" destdir = "${testdir}" 
          verbose = "${full-compile}">
          <classpath refid = "classpath.test"/>
@@ -27,7 +29,6 @@
    </target>
 	
    <target name = "test" depends = "compile">
-      	   <mkdir dir="${testdir}"/>
 
       <junit>
          <classpath refid = "classpath.test" />
