@@ -1,5 +1,5 @@
 <project name = "junitexample" default = "test" basedir = ".">
-   <property name = "testdir" location = "test" />
+   <property name = "testdir" location = "output" />
    <property name = "srcdir" location = "src" />
    <property name = "full-compile" value = "true" />
    <property name = "JUNIT_HOME" value = "D:\junit" />
@@ -8,14 +8,13 @@
 	
    <path id = "classpath.test">
       <pathelement location = "${JUNIT_HOME}/lib/junit-4.10.jar" />
-      <pathelement location = "${testdir}" />
       <pathelement location = "${srcdir}" />
       <path refid = "classpath.base" />
    </path>
 	
    <target name = "clean" >
       <delete verbose = "${full-compile}">
-         <fileset dir = "${testdir}" includes = "**/*.class" />
+         <fileset dir = "${srcdir}" includes = "**/*.class" />
       </delete>
    </target>
 	
