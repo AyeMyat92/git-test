@@ -3,16 +3,16 @@
   <property name="main.src.dir" value="src"/>
   <property name="test.build.dir" value="output"/>
   <property name="test.src.dir" value="src/test/java"/>
+  <property name="JUNIT_HOME" value="D:/lib"/>
 
   <path id="classpath.test">
-    <pathelement location="lib/junit-4.12.jar"/>
-    <pathelement location="${main.build.dir}"/>
+    <pathelement location="JUNIT_HOME/junit-4.12.jar"/>
   </path>
 
   
 
   <target name="CaculatorTest">
-    <mkdir dir="${src.build.dir}"/>
+    <mkdir dir="${test.build.dir}"/>
   	<junit fork="yes" printsummary="withOutAndErr">
   	            <formatter type="xml"/>
   	            <test name="src.TestLogic" todir="${test.build.dir}"/>
