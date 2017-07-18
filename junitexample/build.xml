@@ -18,7 +18,7 @@
    </target>
 	
    <target name = "CalculatorTest" depends = "clean">
-      <mkdir dir="${testdir}"/>
+      
       <javac srcdir = "${srcdir}" destdir = "${testdir}" 
          verbose = "${full-compile}">
          <classpath refid = "classpath.test"/>
@@ -26,6 +26,7 @@
    </target>
 	
    <target name = "test" depends = "CalculatorTest">
+	   <mkdir dir="${testdir}"/>
       <junit>
          <classpath refid = "classpath.test" />
          <formatter type = "xml" />
