@@ -16,7 +16,6 @@
   	<junit fork="yes" printsummary="withOutAndErr">
   	            <formatter type="xml"/>
   	            <test name="src.TestLogic" todir="${test.build.dir}"/>
-  	            <classpath refid="junitexample.classpath"/>
   	</junit>
    
   </target>
